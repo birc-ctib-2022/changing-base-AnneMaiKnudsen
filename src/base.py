@@ -1,5 +1,8 @@
 """Changing bases."""
 
+from re import X
+
+
 digits = {}
 
 for i in range(0, 10):
@@ -13,7 +16,7 @@ digits[14] = 'E'
 digits[15] = 'F'
 
 
-def change_to_base(n: int, b: int) -> str:
+def change_to_base(n,b): #int, b: int) -> str:
     """
     Return `n` in base `b`.
 
@@ -29,4 +32,13 @@ def change_to_base(n: int, b: int) -> str:
     '1F'
     """
     assert 2 <= b <= 16
-    return ''  # FIXME: return n in the right base
+    lst=[]
+    x=n
+    while x>=b:
+        lst.append(digits[x%b])
+        x=x//b
+    else:
+        lst.append(digits[x%b])
+    return "".join(lst[::-1])
+
+
