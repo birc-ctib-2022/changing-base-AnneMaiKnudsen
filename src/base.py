@@ -34,7 +34,7 @@ def change_to_base(n,b): #int, b: int) -> str:
     assert 2 <= b <= 16
     lst=[]
     x=n
-    while x>=16:
+    while x>=b:
         lst.append(digits[x%b])
         x=x//b
     else:
